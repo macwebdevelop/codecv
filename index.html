@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </head>
+  <body style="background=rgb(75,150,150);">
+    <div class="container">
+      <div class="jumbotron" id="Top">
+        <h1>Welcome to my CodeCV!</h1>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Jump To:
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#Colour_Picker">Colour Picker Application</a>
+            <a class="dropdown-item" href="#Colours_Game">Colour Picking Game</a>
+            <a class="dropdown-item" href="#Tip_Calculator">Tip Calculator</a>
+            <a class="dropdown-item" href="#Fortnite_2-D">Fortnite 2-D</a>
+            <a class="dropdown-item" href="#UpGrade">UpGrade</a>
+            <a class="dropdown-item" href="#Contact">Contact Me</a>
+          </div>
+        </div>
+        <hr>
+        <p>My name is Brendan MacLean, and I'm a graduate of University of Toronto - Mississauga with an Honours Bachelor
+          of Science Degree.  I'm now an aspiring web developer, with working knowledge of Javascript, SQL, and Express, and exposure
+          to NodeJS, React, Android Studio and Firebase.</p>
+      </div>
+      <hr>
+      <div class="row" id="Colour_Picker">
+        <div class="col">
+          <img class="rounded" src="images/ColourPickerSnap.png" alt="Colour Picker Application" width="100%">
+        </div>
+        <div class="col">
+          <h4>Colour Picker Application</h4>
+          <p>This is an application I built using HTML, CSS and Javascript to generate colours based on rgb colour codes. The three sliders can be
+            used to dynamically change the colour of the background and sample.  The code in the top allows developers to copy
+            and paste the code into css and style tags.</p>
+            <p><a href="https://github.com/macwebdevelop/codecv/tree/master/Colour%20Picker">Click here to see the repository for this
+            application.</a></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row" id="Colours_Game">
+        <div class="col">
+          <h3>Colour Picking Game</h3>
+          <p>This is a game I built during an online course using HTML, CSS and Javascript, where players attempt to guess the colour
+            given by the rgb code at the top of the screen.  The game has different difficulties which add more squares to pick from, and
+            the game gives randomized colours to each square on startup, on pressing 'New Colours', and finally on changing difficulty.</p>
+            <p><a href="https://github.com/macwebdevelop/codecv/tree/master/Colours%20Game">Click here to see the repository for this
+            game.</a></p>
+        </div>
+        <div class="col">
+          <img class="rounded" src="images/ColoursGameSnap.png" alt="Colour Picking Game" width="100%">
+        </div>
+      </div>
+      <hr>
+      <div class="row" id="Tip_Calculator">
+        <div class="col">
+          <img class="rounded" src="images/TipCalculatorSnap.png" alt="Tip Calculator Application" width="100%">
+        </div>
+        <div class="col">
+          <h3>Tip Calculator Application</h3>
+          <p>This is an application I built using HTML, CSS and Javascript to calculate tip amounts by percentage while also dividing up
+            total based on the number of people paying for the same bill.
+          </p>
+          <p><a href="https://github.com/macwebdevelop/codecv/tree/master/Tip%20Calculator">Click here to see the repository for this
+          application.</a></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row" id="Fortnite_2-D">
+        <h3>Fortnite 2-D</h3>
+        <p>This game was a university project which our class built in teams of two.  I learned about using NodeJS to install modules, and
+        worked with Express, React and jQuery, with a SQLite3 Database to manage profiles.  The game can be played with multiple players when
+        run on a server, and had mechanics like health and ammunition refilling, indestructible and destructible obstacles, border walls, and
+        even buildings with roofs which disappear once the player is underneath them.  My main role was to build the CRUD operations, using the
+        express app to interact with our SQLite3 database, and to expand the React components to build update, register, and delete pages.</p>
+        <p><a href="https://github.com/macwebdevelop/Fortnite2D">Click here to see the repository for this project.</a></p>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <img class="rounded" src="images/FTDLogin.png" alt="Fortnite 2-D Login" width="100%">
+        </div>
+        <div class="col">
+          <img class="rounded" src="images/FTDRegistration.png" alt="Fortnite 2-D Registration" width="100%" height="100%">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <img class="rounded" src="images/FTDGameplay.png" alt="Fortnite 2-D Gameplay" width="100%" height="100%">
+        </div>
+      </div>
+      <hr>
+      <div class="row" id="UpGrade">
+        <h3>UpGrade</h3>
+        <p>This application is both web and android based, and was a group project for a software development class.  This site
+        was built over four sprints of two weeks, in a group of six students.  We also made use of Jira to keep track of our
+        respective user stories, and worked to use INVEST principles to maintain our development momentum across the sprints.
+        I proposed the idea of a tool which could aid students in keeping track of their assignments and test scores, as our
+        school system does not always require professors to upload the grades for the students in their courses if they give
+        them a physical copy of it.  I learned basic app development using Android Studio, including using grid layouts to build
+        each activity screen.  I also got some exposure to Firebase as I had to build a function for implementation in the app
+        that was already present in the website.</p>
+        <p><a href="https://github.com/UTMCSC301/project-appbuilders">Click here to see the repository for this website and
+          application.</a></p>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <img class="rounded" src="images/UpGradeLogin.png" alt="UpGrade Login" width="100%">
+        </div>
+        <div class="col">
+          <img class="rounded" src="images/UpGradeCourseCreation.png" alt="UpGrade Course Creation" width="100%" height="100%">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <img class="rounded" src="images/UpGradeWebsiteGuide.png" alt="UpGrade Course Website Guide" width="100%" height="100%">
+        </div>
+      </div>
+      <div class="jumbotron" id="Contact">
+        <ul>
+          <li>Contact Me: brendan.anthony.maclean13@gmail.com</li>
+          <li>To view my resume, please <a href="https://my.indeed.com/p/2uvkozu">click here.</a></li>
+          <li><a href="#Top">Back to the top.</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
