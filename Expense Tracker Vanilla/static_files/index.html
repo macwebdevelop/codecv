@@ -5,7 +5,7 @@
     <title>Brendan's Expense Tracker</title>
   </head>
   <script src="jquery-3.3.1.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="etv.css">
 	<script src="transactionList.js"></script>
   <body onload="createTL(); getBalance(); getIncome(); getExpenses();">
@@ -40,7 +40,15 @@
       </span>
       <hr>
       <div>
-      <br>
+        <h2>Update Transaction</h2>
+        <h3>Enter the ID of an existing transaction, and the updated values for the label and transaction amount.</h3>
+        <input type="number" name="updateID" id="updateID" placeholder="ID of Transaction to update">
+        <input type="text" name="updateLabel" id="updateLabel" placeholder="Updated Label for Transaction">
+        <input type="number" placeholder="Updated Transaction Amount" name="updateAmount" id="updateAmount" step="0.01">
+        <input type="submit" name="updateSubmit" id="updateSubmit">
+      </div>
+      <hr>
+      <div>
         <h1>Delete All Transactions</h1>
         <h3>Only click here if you wish to delete all the currently stored transactions.
           WARNING: This is action is permanent.</h3>

@@ -76,7 +76,28 @@ function addTransaction(){
     if("error" in data){
       console.log(data["error"]);
     } else{
-        console.log(data["transaction"])
+        createTL();
+        getBalance();
+        getIncome();
+        getExpenses();
+    }
+  });
+}
+
+function updateTransaction(){
+  $.ajax({
+    method: "PUT",
+    url: "/api/updateTransaction/",
+    data: {
+      id: $("#updateID").val(),
+      text: $("#updateLabel").val(),
+      amount: $("#updateAmount").val()
+    }
+  }).done(function(data){
+    console.log("Request to update transaction: " + JSON.stringify(data));
+    if("error" in data){
+      console.log(data["error"]);
+    } else{
         createTL();
         getBalance();
         getIncome();
@@ -128,4 +149,5 @@ function deleteAll(){
 $(function(){
   $("#addSubmit").on('click', function(){ addTransaction(); });
   $("#deleteSubmit").on('click', function(){ deleteTransaction(); });
+  $("#updateSubmit").on('click', function(){ updateTransaction(); });
 });

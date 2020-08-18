@@ -122,6 +122,26 @@ app.post('/api/addTransaction/', function(req, res){
   });
 });
 
+app.put('/api/updateTransaction/', function(req, res){
+	var id = req.body.id;
+  var updateText = req.body.text;
+  var updateAmount = req.body.amount;
+  console.log("UPDATE: Transaction "+id);
+
+  let sql = 'UPDATE balance SET text = ?, amount = ? WHERE id = ?;';
+  db.run(sql, [updateText, updateAmount, id], function(err){
+    var result = {};
+    if(err){
+      res.status(400);
+      result["error"] = err.message;
+    } else {
+      result["response"] = "Update Successful: "+id;
+    }
+    console.log(JSON.stringify(result));
+    res.json(result);
+  });
+});
+
 app.delete('/api/deleteTransaction/', function(req, res){
   var id = req.body.id;
   console.log("DELETE: Transaction ID - "+id);
