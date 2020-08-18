@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Brendan's Expense Tracker</title>
+  </head>
+  <script src="jquery-3.3.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="etv.css">
+	<script src="transactionList.js"></script>
+  <body onload="createTL(); getBalance(); getIncome(); getExpenses();">
+    <center>
+      <div>
+        <h1>Current Balance: $<span id="balance"></span></h1>
+        <br>
+        <h1>Income: $<span id="income"></span></h1>
+        <br>
+        <h1>Expenses: $<span id="expense"></span></h1>
+        <br>
+      </div>
+      <hr>
+      <div>
+        <h2>Transactions</h2>
+        <ul id="tl">
+        </ul>
+      </div>
+      <hr>
+      <span class="column">
+        <h2>Add Transaction</h2>
+        <h3>For income, use a positive amount; for expenses, use a negative amount.</h3>
+        <input type="text" name="label" id="label" placeholder="Label for Transaction"><br>
+        <input type="number" placeholder="0.00" step="0.01" name="amount" id="amount"><br>
+        <input type="submit" name="Submit" id="addSubmit">
+      </span>
+      <span class="column">
+        <h2>Delete Transaction</h2>
+        <h3>To delete a transaction, enter the ID and click delete.</h3>
+        <input type="number" name="identifier" id="identifier" placeholder="Enter ID Here"><br>
+        <input type="submit" name="DeleteSubmit" id="deleteSubmit">
+      </span>
+      <hr>
+      <div>
+      <br>
+        <h1>Delete All Transactions</h1>
+        <h3>Only click here if you wish to delete all the currently stored transactions.
+          WARNING: This is action is permanent.</h3>
+        <button type="button" name="DeleteAll" onclick="deleteAll();">Delete All Transactions</button>
+      </div>
+    </center>
+  </body>
+</html>
