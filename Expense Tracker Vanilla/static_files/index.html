@@ -10,7 +10,7 @@
 	<script src="transactionList.js"></script>
   <body onload="createTL(); getBalance(); getIncome(); getExpenses();">
     <center>
-      <div>
+      <div class="light">
         <h1>Current Balance: $<span id="balance"></span></h1>
         <br>
         <h1>Income: $<span id="income"></span></h1>
@@ -19,7 +19,7 @@
         <br>
       </div>
       <hr>
-      <div>
+      <div class="light">
         <h2>Transactions</h2>
         <ul id="tl">
         </ul>
@@ -39,7 +39,7 @@
         <input type="submit" name="DeleteSubmit" id="deleteSubmit">
       </span>
       <hr>
-      <div>
+      <div class="light">
         <h2>Update Transaction</h2>
         <h3>Enter the ID of an existing transaction, and the updated values for the label and transaction amount.</h3>
         <input type="number" name="updateID" id="updateID" placeholder="ID of Transaction to update">
@@ -48,7 +48,7 @@
         <input type="submit" name="updateSubmit" id="updateSubmit">
       </div>
       <hr>
-      <div>
+      <div class="light">
         <h1>Delete All Transactions</h1>
         <h3>Only click here if you wish to delete all the currently stored transactions.
           WARNING: This is action is permanent.</h3>
