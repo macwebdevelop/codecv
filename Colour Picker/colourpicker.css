@@ -26,6 +26,10 @@ body{
 	height: 500px;
 	border-radius: 10%;
 	background: white;
+	border-bottom: 7px solid black;
+	border-right: 7px solid black;
+	border-top: 1px black solid;
+	border-left: 1px black solid;
 }
 
 #colourSample {
