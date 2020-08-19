@@ -28,23 +28,26 @@
       <span class="column">
         <h2>Add Transaction</h2>
         <h3>For income, use a positive amount; for expenses, use a negative amount.</h3>
-        <input type="text" name="label" id="label" placeholder="Label for Transaction"><br>
-        <input type="number" placeholder="0.00" step="0.01" name="amount" id="amount"><br>
+        <h4 id="addError">Error: This transaction is invalid, please use only numeric values for the amount.</h4>
+        <input required type="text" name="label" id="label" placeholder="Label for Transaction"><br>
+        <input required type="number" placeholder="0.00" step="0.01" name="amount" id="amount"><br>
         <input type="submit" name="Submit" id="addSubmit">
       </span>
       <span class="column">
         <h2>Delete Transaction</h2>
         <h3>To delete a transaction, enter the ID and click delete.</h3>
-        <input type="number" name="identifier" id="identifier" placeholder="Enter ID Here"><br>
+        <h4 id="deleteError">Error: This ID is invalid</h4>
+        <input required type="number" name="identifier" id="identifier" placeholder="Enter ID Here"><br>
         <input type="submit" name="DeleteSubmit" id="deleteSubmit">
       </span>
       <hr>
       <div class="light">
         <h2>Update Transaction</h2>
         <h3>Enter the ID of an existing transaction, and the updated values for the label and transaction amount.</h3>
-        <input type="number" name="updateID" id="updateID" placeholder="ID of Transaction to update">
-        <input type="text" name="updateLabel" id="updateLabel" placeholder="Updated Label for Transaction">
-        <input type="number" placeholder="Updated Transaction Amount" name="updateAmount" id="updateAmount" step="0.01">
+        <h4 id="updateError">Error: This ID is invalid, or missing updated label/amount.</h4>
+        <input required type="number" name="updateID" id="updateID" placeholder="ID of Transaction to update">
+        <input required type="text" name="updateLabel" id="updateLabel" placeholder="Updated Label for Transaction">
+        <input required type="number" placeholder="Updated Transaction Amount" name="updateAmount" id="updateAmount" step="0.01">
         <input type="submit" name="updateSubmit" id="updateSubmit">
       </div>
       <hr>

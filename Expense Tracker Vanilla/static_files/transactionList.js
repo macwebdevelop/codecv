@@ -64,67 +64,85 @@ function getExpenses(){
 }
 
 function addTransaction(){
-  $.ajax({
-    method: "POST",
-    url: "/api/addTransaction/",
-    data: {
-      text: $("#label").val(),
-      amount: $("#amount").val()
-    }
-  }).done(function(data){
-    console.log("Request to add transaction: " + JSON.stringify(data));
-    if("error" in data){
-      console.log(data["error"]);
-    } else{
+  if($("#label").val() == []||$("#amount").val() == []){
+    $("#addError").show();
+  } else {
+    $.ajax({
+      method: "POST",
+      url: "/api/addTransaction/",
+      data: {
+        text: $("#label").val(),
+        amount: $("#amount").val()
+      }
+    }).done(function(data){
+      console.log("Request to add transaction: " + JSON.stringify(data));
+      if("error" in data){
+        console.log(data["error"]);
+        $("#addError").show();
+      } else{
+        $("#addError").hide();
         createTL();
         getBalance();
         getIncome();
         getExpenses();
-    }
-  });
+      }
+    });
+  }
 }
 
 function updateTransaction(){
-  $.ajax({
-    method: "PUT",
-    url: "/api/updateTransaction/",
-    data: {
-      id: $("#updateID").val(),
-      text: $("#updateLabel").val(),
-      amount: $("#updateAmount").val()
-    }
-  }).done(function(data){
-    console.log("Request to update transaction: " + JSON.stringify(data));
-    if("error" in data){
-      console.log(data["error"]);
-    } else{
+  if($("#updateLabel").val() == []||$("#updateAmount").val() == []||$("#updateID")==[]){
+    $("#updateError").show();
+  } else {
+    $.ajax({
+      method: "PUT",
+      url: "/api/updateTransaction/",
+      data: {
+        id: $("#updateID").val(),
+        text: $("#updateLabel").val(),
+        amount: $("#updateAmount").val()
+      }
+    }).done(function(data){
+      console.log("Request to update transaction: " + JSON.stringify(data));
+      if("error" in data){
+        console.log(data["error"]);
+        $("#updateError").show();
+      } else {
+        $("#updateError").hide();
         createTL();
         getBalance();
         getIncome();
         getExpenses();
-    }
-  });
+      }
+    });
+  }
 }
 
 function deleteTransaction(id) {
-  $.ajax({
-    method: "DELETE",
-    url: "/api/deleteTransaction/",
-    data: {
-      id: $("#identifier").val()
-    }
-  }).done(function(data){
-    console.log("Request to delete transaction with ID: "+ id);
-    if("error" in data){
-      console.log(data["error"]);
-    } else {
-      console.log(data["transactionDeleted"]);
-      createTL();
-      getBalance();
-      getIncome();
-      getExpenses();
-    }
-  });
+  if($("#identifier").val() == []){
+    $("#deleteError").show();
+  } else {
+    $.ajax({
+      method: "DELETE",
+      url: "/api/deleteTransaction/",
+      data: {
+        id: $("#identifier").val()
+      }
+    }).done(function(data){
+      console.log("Request to delete transaction with ID: "+ id);
+      if("error" in data){
+        console.log(data["error"]);
+        $("#deleteError").show();
+      } else {
+        $("#deleteError").hide();
+        console.log(data["transactionDeleted"]);
+        createTL();
+        getBalance();
+        getIncome();
+        getExpenses();
+      }
+    });
+  }
 }
 
 function deleteAll(){
