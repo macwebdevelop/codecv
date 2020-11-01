@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta HTTP-EQUIV="EXPIRES" CONTENT="-1">
+		<title>Computing Science 309</title>
+
+		<script src="lib/jquery-3.3.1.min.js"></script>
+		<script src="lib/react.js"></script>
+    	<script src="lib/react-dom.js"></script>
+    	<script src="lib/babel.min.js"></script>
+		<script src="client.js"></script>
+		<script language="javascript" src="model.js" > </script>
+		<script language="javascript" src="controller.js" > </script>
+		<link rel = "stylesheet" type = "text/css" href = "css/stylesheet.css" />
+		<!--<script type="text/babel">-->
+
+	</head>
+	<body bgcolor=ffffff onload="setupGame();">
+		<div id="ui_login">
+			<div>
+				<center>
+					<!-- https://www.tjvantoll.com/2013/01/01/enter-should-submit-forms-stop-messing-with-that/ -->
+					<h1>Welcome to Fortnite 2D!</h1>
+
+					<br><input type="text" id="user_login" name="user" placeholder="User Name" required minlength="1">
+					<br>
+					<br><input type="password" id="password_login" name="password" placeholder="Password" required minlength="6">
+					<br>
+					<br><input type="submit" id="loginSubmit" value="Login">
+					<br><h6 id="InvalidCredentials">Invalid Username or Password, Please Try Again</h6>
+					<br><input type="submit" id="registerPage" value="Register Page" onclick="
+					$('#ui_register').show(); 
+					$('#ui_login').hide();
+					$('#InvalidCredentials1').hide();">
+					<br>
+					<br><input type="submit" id="updatePage" value="Update Password" onclick="
+					$('#ui_update').show(); 
+					$('#ui_login').hide();
+					$('#InvalidCredentials2').hide();">
+				</center>
+			</div>
+		</div>
+
+
+		<div id="ui_register">
+			<div>
+				<center>
+					<!-- https://www.tjvantoll.com/2013/01/01/enter-should-submit-forms-stop-messing-with-that/ -->
+					<h1>Welcome to Fortnite 2D!</h1>
+					<br>
+					<p>Please enter a username, valid email, and a password of greater than 6 characters.</p>
+					<br>
+					<input type="text" id="user_register" name="user" placeholder="Username" required minlength="1">
+					<br>
+					<br><input type="password" id="password_register" name="password" placeholder="Password" required minlength="6">
+					<br>
+					<br><input type="email" id="email_register" name="email" placeholder="Email" required minlength="1">
+					<br>
+					<br><input type="submit" id="registerSubmit" value="Register">
+					<br>
+					<h6 id="InvalidCredentials1">Username already exists, Please Try Again</h6>
+					<br><input type="submit" id="loginPage" value="Login Page" onclick="
+					$('#ui_login').show(); 
+					$('#ui_register').hide();
+					$('#InvalidCredentials').hide();">
+					<br>
+					<br><input type="submit" id="updatePage" value="Update Password" onclick="
+					$('#ui_update').show(); 
+					$('#ui_register').hide();
+					$('#InvalidCredentials2').hide();">
+				</center>
+			</div>
+		</div>
+
+		<div id="ui_update">
+			<div>
+				<center>
+					<!-- https://www.tjvantoll.com/2013/01/01/enter-should-submit-forms-stop-messing-with-that/ -->
+					<h1>Fortnite 2D Password Update</h1>
+					<br>
+					<input type="text" id="user_update" name="user" placeholder="Username" required minlength="1">
+					<br>
+					<br><input type="password" id="old_password" name="password" placeholder="Old Password" required minlength="6">
+					<br>
+					<br><input type="password" id="password_update" name="password" placeholder="New Password" required minlength="6">
+					<br>
+					<br><input type="submit" id="updateSubmit" value="Update">
+					<br>
+					<h6 id="InvalidCredentials2">Invalid Credentials, Please Try Again</h6>
+					<br><input type="submit" id="loginPage" value="Login Page" onclick="
+					$('#ui_login').show(); 
+					$('#ui_update').hide();
+					$('#InvalidCredentials').hide();">
+					<br>
+					<br><input type="submit" id="registerPage" value="Register Page" onclick="
+					$('#ui_register').show(); 
+					$('#ui_update').hide();
+					$('#InvalidCredentials1').hide();">
+				</center>
+			</div>
+		</div>
+
+
+		<div id="ui_game">
+				<br/>
+				<div class="split left">
+  					<div class="centered">
+    					<br/>
+    					<ul>
+    						<input type="button" value="Start Game" id="Start" onclick="
+    						cleanGame(); setupGame(); startGame(); $('#Start').hide(); $('#Restart').show();">
+							<input type="button" value="Restart" id="Restart" onclick="
+							cleanGame(); setupGame(); startGame();">
+							<input type="button" value="Logout" id="Logout" onclick="
+							cleanGame(); 
+							$('#Start').show(); $('#Restart').hide(); $('#ui_game').hide(); 
+							$('#ui_login').show(); console.log('User Logged Out.');
+							$('#InvalidCredentials').hide();">
+							<hr/>
+							<h2>Instruction: </h2>
+							<li>Click "Start Game" to start game, click "Restart" to restart game.</li>
+							<li>Press WASD or Arrows to move.</li>
+							<li>Press P to pause/resume game.</li>
+							<li>Press E to change weapon.</li>
+							<li>Little Green Circle is Health Pack, pick to recover player's health.</li>
+							<li>Little Blue Circle is Ammo Pack, pick to recover player's ammo.</li>
+							<li>Dark Grey Block is Stone, unbreakable.</li>
+							<li>Brown Block is a wall, breakable.</li>
+							<li>Large Light Grey Square is the roof of a house, will become transparent when player enters.</li>
+							<li>Large Green Square is Grass, will halve the player's speed.</li>
+							<li>Large Blue Square is Ice, will double the player's speed.</li>
+							<li>Enemy:
+								<br/>
+								<ul>
+									<li>Grey Enemy doesn't move or attack.</li>
+									<li>Pink Enemy uses a Pistol and will continue chasing the player.</li>
+									<li>Orange Enemy uses a Shotgun and will chase the player when they are in its sight range, won't be affected by Grass or Ice.</li>
+									<li>Blue Enemy uses a Sniper Rifle and will chase the player and attack with it's hands when it has no ammo, won't be affected by Grass and Ice.</li>
+								</ul>
+							</li>
+						</ul>
+						<br/>
+  					</div>
+				</div>
+			<center>
+				<div class="split right">
+					<h1>Fortnite 2D</h1>
+  					<div class="centered">
+  						<canvas id="stage" width="600" height="500" style="border:1px solid black;"> </canvas>
+  					</div>
+  				</div>
+			</center>
+		</div>
+	</body>
+</html>
+

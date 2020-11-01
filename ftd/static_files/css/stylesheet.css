@@ -1,0 +1,64 @@
+body{
+    font-family: Lucida Console; 
+}
+h6 {
+    color: red;
+}
+#ui_login {
+    display: contents;
+}
+#ui_game {
+    display: none;
+}
+#ui_register {
+    display: none;
+}
+#ui_update {
+    display: none;
+}
+#Restart {
+    display: none;
+}
+input:focus:invalid{
+    background-color: red;
+}
+input[type=submit] {
+    width: 160.8px;
+    background-color: steelblue;
+    color: white;
+}
+input[type=button]{
+    background-color: steelblue;
+    color: white;
+    width: 160.8px;
+}
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+    left: 0;
+    width: 30%;
+}
+
+/* Control the right side */
+.right {
+    right: 0;
+    width: 70%;
+}
+/*
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+*/
