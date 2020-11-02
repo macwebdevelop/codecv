@@ -3378,7 +3378,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: rgb(10, 60, 60);
+		background-color: #070c56;
 		cursor: default;
 		padding: 1.75em 2em;
 	}
@@ -3532,7 +3532,7 @@ input, select, textarea {
 
 	#sidebar {
 		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #0a3c3c;
+		background: #070c56;
 		cursor: default;
 		height: 100vh;
 		left: 0;
