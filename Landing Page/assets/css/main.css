@@ -2540,23 +2540,23 @@ input, select, textarea {
 				}
 
 				.wrapper.style1-alt .icon.major:before {
-					color: #493382;
+					color: rgb(70, 120, 120);
 				}
 
 				.wrapper.style2 .icon.major:before {
-					color: #5052b5;
+					color: rgb(50, 90, 100);
 				}
 
 				.wrapper.style2-alt .icon.major:before {
-					color: #3e4094;
+					color: rgb(50, 60, 100);
 				}
 
 				.wrapper.style3 .icon.major:before {
-					color: #b74e91;
+					color: rgb(40, 60, 60);
 				}
 
 				.wrapper.style3-alt .icon.major:before {
-					color: #953d75;
+					color: #2c1223;
 				}
 
 /* Image */
